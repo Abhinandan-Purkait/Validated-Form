@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/KIIT/Desktop/GALLERY/VIDEOGALLERY/konnexions.html# -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Website CSS style -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <title>Konnexions</title>
+    <style>
+        form{
+            opacity: 0.8;
+            border-radius: 47%;
+            border-style: inherit;
+            background-image: linear-gradient(-45deg,blue,red,black);
+            position: relative;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, .95);
+            padding: 10px;
+        }
+        form:hover{
+            transform: scale(1.03);
+        }
+        h2{
+            margin-top: 2%;
+        }
+        body{
+            background-image: url('images/img2.jpg');
+            background-size: cover;
+            color:white;
+        }
+        .texts{
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row main">
+            <div class="main-login main-center" style="margin-top: 2.5%;margin-left: 50%;width:40%; height: 60%">
+                <form id="MyForm" method="post" action="#" style="padding-left: 13.5%;padding-right: 12%;padding-top: 5%;padding-bottom: 5%;"
+                    onsubmit="return checkForm(this);">
+
+                    <div class="form-group">
+
+                        <center><label class="texts" for="name">
+                                <h1>Sign Up</h1>
+                            </label></center>
+                        <label class="texts" for="name">
+                            <h4>Username</h4>
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input required="" type="text" class="form-control" name="name" id="name" placeholder="Enter your Name"
+                                    style="margin-left: 3%;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="texts" for="email">
+                            <h4>Your Email</h4>
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                <input required="" type="text" class="form-control" name="email" id="email" placeholder="Enter your Email"
+                                    style="margin-left: 3%;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="texts" for="username">
+                            <h4>Phone Number</h4>
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <input required="" type="tel" class="form-control" name="num" id="num" placeholder="Enter your Phone Number"
+                                    style="margin-left: 3%;" pattern="^\d{10}$">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="texts" for="password">
+                            <h4>Password</h4>
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input required="" type="password" class="form-control" name="password" id="password"
+                                    placeholder="Enter your Password" style="margin-left: 3%;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="texts" for="confirm">
+                            <h4>Confirm Password</h4>
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input required="" type="password" class="form-control" name="confirm" id="confirm"
+                                    placeholder="Confirm your Password" style="margin-left: 3%;" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    title="Minimum 8 length with atleast one Uppercase and a number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <input required="" type="submit" name="submit" placeholder="Register" id="button" class="btn btn-primary btn-lg btn-block login-button"
+                            style="margin-left: 17%;width: 260.675px;height: 47px;padding-right: 1%;padding-left: 1%;"
+                            onclick="func()">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function func() {
+            var username = document.getElementById("MyForm").elements.namedItem("name").value;
+            var email = document.getElementById("MyForm").elements.namedItem("email").value;
+            email = email.substring(0, email.indexOf('@'));
+            var password = document.getElementById("MyForm").elements.namedItem("password").value;
+            var cnf_password = document.getElementById("MyForm").elements.namedItem("confirm").value;
+            var flag = 1;
+            if (password != cnf_password) {
+                alert("Confirm Password doesnot match !");
+                flag = 0;
+            }
+            if ((username.length > 0) && (email.length > 0)) {
+                if (password.includes(username)) {
+                    alert("Username cannot be in password");
+                    flag = 0;
+                }
+                if (password.includes(email)) {
+                    alert("Email cannot be in password");
+                    flag = 0;
+                }
+            } else {
+                flag = 0;
+            }
+            if (flag == 1) {
+                $("#MyForm").get(0).setAttribute('action', 'VideoGallery.html');
+            }
+        }
+    </script>
+</body>
+
+</html>
